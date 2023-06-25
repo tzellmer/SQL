@@ -1,0 +1,43 @@
+--Create a store store database
+
+
+CREATE TABLE robots_and_Space (id Integer Primary KEY, item TEXT, category TEXT, age INTEGER, price INTEGER);
+
+INSERT INTO robots_and_space VALUES (1, "Legos", "building", "18-99", "10-350");
+
+INSERT INTO robots_and_space VALUES (2, "Shirts", "clothing", "0-99", "10-50");
+
+INSERT INTO robots_and_space VALUES (3, "Chapter Books", "literature", "10-15", "9-15");
+
+INSERT INTO robots_and_space VALUES (4, "Coloring books", "literature", "5-99", "10-20");
+
+INSERT INTO robots_and_space VALUES (5, "Robot building kits", "building", "8-99", "12-60");
+
+INSERT INTO robots_and_space VALUES (6, "Space Picture Books", "literature", "0-8", "12-29");
+
+INSERT INTO robots_and_space VALUES (7, "Astronaut ice cream", "snacks", "3-99", 9);
+
+INSERT INTO robots_and_space VALUES (8, "Robot Gummies", "snacks", "4-99", 7);
+
+INSERT INTO robots_and_space VALUES (9, "Socks", "clothing", "10-99", "12-17");
+
+INSERT INTO robots_and_space VALUES (10, "Posters", "art", "0-99", "9-49");
+
+INSERT INTO robots_and_space VALUES (11, "Stickers", "art", "3-99", "4-9");
+
+INSERT INTO robots_and_space VALUES (12, "Plushies", "other", "3-99", "10-20");
+
+INSERT INTO robots_and_space VALUES (13, "Jewelry", "clothing", "8-99", "15-65");
+
+INSERT INTO robots_and_space VALUES (14, "Ties", "clothing", "15-99", 39);
+
+INSERT INTO robots_and_space VALUES (15, "Baby toys", "toys", "0-2", "10-35");
+
+--display the database ordered by price. 
+SELECT * From robots_and_space ORDER BY price;
+
+--display the database grouped by category. 
+SELECT * FROM robots_and_space GROUP BY category;
+
+--display the database grouped by age.
+SELECT * FROM robots_and_space GROUP BY age;
