@@ -412,3 +412,6 @@ SELECT COUNT(), ROUND(AVG(Space_Flights)) AS "AVG Space Flights", ROUND(AVG(Spac
 SELECT COUNT() AS "Total Astronauts Per Year", Year from astronauts WHERE Year <= 2000 GROUP BY Year ORDER BY Year desc;
 
 Select * from astronauts WHERE space_flights >=2 AND space_walks >= 2;
+
+select gender, avg (space_flight_hr) from astronauts
+group by gender;
