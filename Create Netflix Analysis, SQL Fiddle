@@ -1,0 +1,48 @@
+--PostgreSQL dialect
+--Netflix Analysis
+--Data from the Netflix database stored at http://sqlfiddle.com/#!17/7dae0/16/0 
+
+SELECT * from "netflix_titles_info" LIMIT 5;
+
+SELECT * from "netflix_people" LIMIT 5;
+
+Select people show_id
+,people.director
+,titles.title
+,titles.type
+FROM "netflix_people" people
+LEFT JOIN "netflix_titles_info" titles
+ON people.show_id = titles.show_id;
+
+SELECT Count (*)
+FROM "netflix_titles_info"
+Where type = 'Movie';
+
+SELECT title, "date_added"
+FROM "netflix_titles_info"
+Order by "date_added" desc;
+
+SELECT max (date(date_added))
+FROM "netflix_titles_info";
+
+SELECT title
+FROM "netflix_titles_info"
+ORDER by title asc;
+
+Select director
+FROM "netflix_people" people
+RIGHT JOIN "netflix_titles_info" titles
+ON people.show_id = titles.show_id
+WHERE title = 'The Starling';
+
+SELECT title, release_year
+FROM "netflix_titles_info" 
+WHERE type = 'Movie'
+AND release_year <=
+(SELECT MIN(release_year)
+ FROM "netflix_titles_info"
+ WHERE type = 'Movie');
+
+Select title, type, rating
+FROM "netflix_titles_info"
+Order by rating asc;
